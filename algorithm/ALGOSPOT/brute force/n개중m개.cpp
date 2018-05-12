@@ -7,21 +7,23 @@ void print(vector<int>& v) {
 	for (auto a : v)cout << a << ' ';
 	cout << '\n';
 }
-#include <algorithm>
-void foo(int n,vector<int> &v, int limit) {
-	if (limit == 0) {
+
+void foo(vector<int> &v, int n, int m) {
+	if (m == 0) {
 		print(v);
 		return;
 	}
 	int first = v.empty() ? 0 : v.back() + 1;
 	for (int i = first; i < n; i++) {
 		v.push_back(i);
-		foo(n, v, limit - 1);
+		foo(n, v, m-1);
 		v.pop_back();
 	}
 }
 
 int main() {
 	vector<int> v;
-	foo(7, v, 4);
+	int n,m;
+	cin >> n >> m;
+	foo(v,n,m);
 }
