@@ -5,6 +5,4 @@
 * 코드포스
 
 * https://www.acmicpc.net/user/claor123
-* tjdqls328123@naver.c
-laskdjlsakdj:Wq
-om
+* tjdqls328123@naver.com
