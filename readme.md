@@ -6,4 +6,4 @@
 
 * https://www.acmicpc.net/user/claor123
 * tjdqls328123@naver.com
-* 안녕하세요
+
