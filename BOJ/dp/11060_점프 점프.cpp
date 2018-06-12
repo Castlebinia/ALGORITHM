@@ -1,4 +1,4 @@
-#include <iostream>#include <iostream>
+#include <iostream>
 #include <algorithm>
 
 using namespace std;
@@ -22,19 +22,4 @@ int main() {
 	}
 	if (d[n] == 0)cout << -1 << '\n';
 	else cout << d[n]-1 << '\n';
-}
-	int cnt = 0;
-	for (int i = 1; i <= n; i++) {
-		if (i == c || i == h)continue;
-		if (!check2[i]) {
-			cret = 0;
-			d[i]=dfs(i)+1;
-			cnt++;
-		}
-	}
-	sort(d, d + n,cmp);
-	for (int i = 0; i < k; i++) {
-		ret += d[i];
-	}
-	cout << ret << '\n';
 }
