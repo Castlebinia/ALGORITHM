@@ -20,7 +20,7 @@ int main() {
 	for (int i = 0; i <= 10000; i++) {
 		if (d[i] >= m) {
 			cout << i << '\n';
-			break;
+			return 0;
 		}
 	}
 }
