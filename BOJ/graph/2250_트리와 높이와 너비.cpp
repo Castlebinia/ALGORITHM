@@ -5,8 +5,6 @@
 using namespace std;
 
 vector<pair<int, int>>p(10001);
-vector<int>v[10001];
-vector<int>level(10001);
 vector<int>width(10001);
 vector<int>solve[10001];
 bool root[10001];
@@ -14,25 +12,13 @@ bool check[10001];
 const int INF= 0x3f3f3f3f;
 
 int w, h,m;
-void foo(int x) {
+void foo(int x,int depth) {
 	if (x == -1)return;
-	foo(p[x].first);
+	foo(p[x].first,depth+1);
 	width[x] = ++w;
-	foo(p[x].second);
-}
-
-void dfs(int now) {
-	check[now] = true;
-	for (int i = 0; i < v[now].size(); i++) {
-		int next = v[now][i];
-		if (!check[next] && next != -1) {
-			check[next] = true;
-			level[next] = level[now] + 1;
-			solve[level[next]].push_back(next);
-			m = max(level[next], m);
-			dfs(next);
-		}
-	}
+	foo(p[x].second,depth+1);
+	solve[depth].push_back(x);
+	m = max(depth, m);
 }
 
 int main() {
@@ -44,8 +30,6 @@ int main() {
 		int x, l, r;
 		cin >> x >> l >> r;
 		p[x] = { l,r };
-		v[x].push_back(l);
-		v[x].push_back(r);
 		root[l] = true;
 		root[r] = true;
 	}
@@ -57,9 +41,7 @@ int main() {
 		}
 	}
 	solve[1].push_back(r);
-	level[r] = 1;
-	foo(r);
-	dfs(r);
+	foo(r,1);
 	int ret = 1;
 	int what = 1;
 	for (int i = 1; i <=m; i++) {
