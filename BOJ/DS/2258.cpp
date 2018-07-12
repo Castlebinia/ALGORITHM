@@ -36,7 +36,7 @@ int main() {
 		if (!op) {
 			if (a > b)swap(a, b);
 			cout << query(1, 1, ssize, a, b) << '\n';
-		}
+        }
 		else update(a, b);
 	}
 }
