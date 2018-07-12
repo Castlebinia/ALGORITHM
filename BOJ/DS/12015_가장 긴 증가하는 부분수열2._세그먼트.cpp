@@ -40,7 +40,6 @@ int main() {
 	int n;
 	cin >> n;
 	while (ssize < n) ssize <<= 1;
-	ssize--;
 	vector<Point>p;
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
