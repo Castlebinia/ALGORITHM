@@ -20,13 +20,13 @@ int min_init(int node, int start, int end) {
 
 int max_query(int node, int start, int end, int i, int j) {
 	if (i>end||j<start)return 0;
-	if (i<=start&&end<=j) return max_tree[node];
+	if (start<=i&&j<=end) return max_tree[node];
 	return max(max_query(node * 2, start, (start + end) / 2,i,j), 
 		max_query(node * 2 + 1, (start + end) / 2 + 1, end, i, j));
 }
 int min_query(int node, int start, int end, int i, int j) {
 	if (i>end||j<start)return 0x3f3f3f3f;
-	if (i<=start&&end<=j)return min_tree[node];
+	if (start<=i&&j<=end)return min_tree[node];
 	return min(min_query(node * 2, start, (start + end) / 2, i, j), 
 		min_query(node * 2 + 1, (start + end) / 2+1, end, i, j));
 }
