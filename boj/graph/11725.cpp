@@ -9,10 +9,8 @@ vector<vector<int> >p;
 void dfs(int now){
 	for(int next:p[now]){
 		if(!parent[next]){
-			parent[next]=now;
-			dfs(next);
-		}
-	}
+		parent[next]=now;
+		dfs(next);}
 }
 
 int main(){
@@ -23,10 +21,11 @@ int main(){
 	p.resize(n+1);
 	for(int i=0;i<n-1;i++){
 		int u,v;
-		cin >> u>>v;
+	    cin >> u>>v;
 		p[u].push_back(v);
 		p[v].push_back(u);
-	}
-	dfs(1);
-	for(int i=2;i<=n;i++)cout << parent[i] << '\n';
+																	}
+		dfs(1);
+	    for(int i=2;i<=n;i++)cout << parent[i] << '\n';
 }
+
