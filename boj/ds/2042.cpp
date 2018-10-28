@@ -50,4 +50,5 @@ int main() {
 			cout << query(1, 0, n - 1, b - 1, c-1) << '\n';
 		}
 	}
+	return 0;
 }
